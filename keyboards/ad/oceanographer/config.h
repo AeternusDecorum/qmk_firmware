@@ -29,13 +29,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_ROWS 4
 #define MATRIX_COLS 13
 
-#define XX NO_PIN
+// #define NO_PIN NO_PIN
 
 #define DIRECT_PINS { \
-  { E5,  E4,  E3, D15, C6, C7, C8, C9, A8, A9, A10, E2,  XX  }, \
-  { C13, F9,  F1, C2,  A6, A5, B12, A3, A2, A1, A0,  F3,  XX  }, \
+  { E5,  E4,  E3, D15, C6, C7, C8, C9, A8, A9, A10, E2,  NO_PIN  }, \
+  { C13, F9,  F1, C2,  A6, A5, B12, A3, A2, A1, A0,  F3,  NO_PIN  }, \
   { C14, F10, C0, C3,  A7, C4, B0, B1, E7, E9, E11, E13, E14 }, \
-  { E6,  C15, F0, C1,  XX, F2, C5, B2, E8, XX, E10, E12, E15 }  \
+  { E6,  C15, F0, C1,  NO_PIN, F2, C5, B2, E8, NO_PIN, E10, E12, E15 }  \
 }
 
 #define DIODE_DIRECTION COL2ROW
@@ -66,6 +66,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 TODO: Move this to a valid pin
 SPEAKER D13
 */
+#define AUDIO_PIN A4
+// #define AUDIO_STATE_TIMER GPTD7
+// #define AUDIO_PWM_DRIVER PWMD1
+// #define AUDIO_PWM_CHANNEL 1
+// #define AUDIO_STATE_TIMER GPTD6
+
+#ifdef AUDIO_ENABLE
+  #define STARTUP_SONG SONG(NOCTURNE_OP_9_NO_1)
+#endif
 
 #define DEBOUNCE 5
 

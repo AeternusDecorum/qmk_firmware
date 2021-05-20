@@ -47,7 +47,7 @@ void render_mod_status(uint8_t modifiers) {
 }
 
 void oled_task_user(void) {
-    oled_clear();
+    // oled_clear();
     // void oled_write_pixel(uint8_t x, uint8_t y, bool on);
 
     render_layer_state();
